@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+require("dotenv").config();
+
 const userSchema = new mongoose.Schema({
     name : {
         type: String, 
@@ -15,12 +17,12 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String, 
         required: true, 
-        minlength: 3, maxlength: 50}
+        minlength: 3, maxlength: 100}
     },
     {
         timestamps: true,
     })
 
-const userModel = moongoos.model("User", userSchema);
+const userModel = mongoose.model("User", userSchema);
 
-module.exports = userModel;
+module.exports = userModel; 
